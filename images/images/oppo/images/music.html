@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+      <meta charset="gb2312">
+
+      <meta name="applicable-device" content="mobile"/>
+
+      <title>��������</title>
+
+      <meta name="keywords" content=""/>
+
+      <meta name="description" content=""/>
+
+      <meta name="apple-touch-fullscreen" content="YES" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+
+      <meta name="format-detection" content="telephone=no" />
+
+      <link rel="stylesheet" href="http://statics.webkfa.com/css/music/html5.css" media="screen" type="text/css" />
+
+      <script type="text/javascript">
+
+        var playlist=[];
+
+        var bglist=[
+
+            "http://img04.taobaocdn.com/imgextra/i4/1655943686/TB26zHAcFXXXXakXXXXXXXXXXXX_!!1655943686.jpg_300x300.jpg",
+
+            "http://img01.taobaocdn.com/imgextra/i1/1655943686/TB2hJnPcFXXXXX2XXXXXXXXXXXX_!!1655943686.jpg_300x300.jpg",
+
+            "http://img02.taobaocdn.com/imgextra/i2/1655943686/TB2aJbNcFXXXXapXXXXXXXXXXXX_!!1655943686.jpg_300x300.jpg",
+
+            "http://img02.taobaocdn.com/imgextra/i2/1655943686/TB22xLOcFXXXXX8XXXXXXXXXXXX_!!1655943686.jpg_300x300.jpg",
+
+            "http://img01.taobaocdn.com/imgextra/i1/1655943686/TB2PwTscFXXXXcTXpXXXXXXXXXX_!!1655943686.jpeg_300x300.jpg",
+
+        ]
+
+      </script>
+
+  </head>
+
+  <body>
+
+        <span class="tcbtn" style="top:5px;left:5px;" onclick="hfclick();">����</span>
+
+        <span class="tcbtn" style="right:5px;top:5px;" onclick="window.scrollTo(0,h);">ѡ��</span>
+
+        <div id="newlrcId" style="">
+
+            <div class="bg" id="bgid"></div>
+
+            <div class="filter"></div>
+
+            <div class="main">
+
+                <p class="song" id="songNameid">��������</p>
+
+                <div class="lrc" id="lrctextId">
+
+                    <div id="llrcId" style="overflow: hidden;">
+
+                        <div>��������</div>
+
+                    </div>
+
+                </div>
+
+                <div class="newfoot">
+
+                      <p class="time"><span id="currTimeId">00:00</span><span class="fr" id="totalTimeId">00:00</span></p>
+
+                      <div style="width:100%;padding:5px 0;" id="clickbarid">
+
+                          <div class="line_bar">
+
+                                <ul><li style="width:0px;"><em id="youwid" style="width:0px;"></em></li></ul><span class="play_icon" id="ydbtnid" style="left:0px;"></span>
+
+                          </div>
+
+                      </div>
+
+                      <div class="play_m">
+
+                            <a href="javascript:;" id="newprevid"><img onclick="prevsong();" src="http://img01.taobaocdn.com/imgextra/i1/1655943686/TB2j0DwcFXXXXaYXXXXXXXXXXXX_!!1655943686.png" width="29"></a>
+
+                            <a href="javascript:;" id="ctrlBtnId3"><img id="playstopid" onclick="playstopop();" src="http://img03.taobaocdn.com/imgextra/i3/1655943686/TB2qUPxcFXXXXaDXXXXXXXXXXXX_!!1655943686.png" width="29"></a>
+
+                            <a href="javascript:;" id="newnextid"><img onclick="nextsong();" src="http://img04.taobaocdn.com/imgextra/i4/1655943686/TB27HDycFXXXXaJXXXXXXXXXXXX_!!1655943686.png" width="29"></a>
+
+                      </div>
+
+                </div>
+
+              </div>
+
+        </div>
+
+        <div id="playHTMLId" style="display: none;">
+
+              <audio id="mediaPlayId"
+
+               onended="managerPlst('statDivId');"
+            onloadstart="loadStatus('statDivId');"
+
+               onplaying="playStatus('statDivId')"
+
+               onpause="pauseStatus('statDivId')"
+
+               onerror="loadError('statDivId')"
+
+               ontimeupdate="updateMethod('statDivId')"
+
+               mozaudiochannel="content"
+
+
+              </audio>
+
+         </div>
+
+         <div style="position: absolute;display:none;z-index: 1000;top: 50px;left: 0px;" id="statDivId">
+
+         </div>
+
+        <script src="http://statics.webkfa.com/js/music/html5.js"></script>
+
+  </body>
+
+</html>

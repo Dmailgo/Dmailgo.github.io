@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>【DINGDING官网】</title>
+  <link rel="stylesheet" type="text/css" href="images/dd.css">
+  <link href="cssmain.css" type="text/css" rel="stylesheet">
+    <style type=text/css>
+	 .result{font-weight:bold}
+	 #container{width:100%;}
+	 #header{width:1000px;margin:0 auto;heigth:100px;}
+	 #main{width:1000px;margin:0 auto;heigth:400px;}
+	 #side{float:right;width:50px;}
+	 #side0{float:center;width:500px;}
+	 #footer{width:1000px;margin:0 auto;height:50px;}
+	 td{color:navy;padding:15px;heigth:200px;border:1px solid white;}
+	 #film{font:8em;color:black;width:50px;}
+	 
+	 .aa{width:16px;height:16px;}
+     .bb{width:60px;height:60px;}
+
+
+*{margin:0;padding:0;}
+li{list-style:none;}
+.focuspic{height:450px;position:relative;overflow:hidden;width:900px;}
+.showpic1{background:#A9A9A9;height:500px;}
+.focuspic li a{display:block;height:500px;width:100%;}
+.focuspic .num{position:absolute;left:50%;margin-left:65px;bottom:5px;}
+.focuspic .num a{border-radius:0px;width:10px;height:10px;text-indent:-999999px;background:rgb(160,160,255);display:block;margin-right:10px;float:left;cursor:pointer;}
+.focuspic .num .cur{background:#111111;}
+    </style>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+	<script>
+	 $(document).ready(function() {
+  var sw1 = 0;
+  var hlen1=$(".focuspic>ul>li").length;
+  for(var j=1;j<=hlen1;j++){
+    $(".focuspic .num").append("<a>"+j+"</a>");
+  };
+  $(".focuspic .num a").eq(0).addClass("cur");
+  $(".focuspic .num a").mouseover(function(){
+    sw1 = $(".focuspic .num a").index(this);
+    myShow1(sw1);
+  });
+  function myShow1(j){
+    $(".focuspic .num a").eq(j).addClass("cur").siblings("a").removeClass("cur");
+    $(".focuspic ul li").eq(j).stop(true,true).fadeIn(600).siblings("li").fadeOut(100);
+  }
+  //滑入停止动画，滑出开始动画
+  $(".focuspic").hover(function(){
+    if(myTime1){
+      clearInterval(myTime1);
+    }
+  },function(){
+    myTime1 = setInterval(function(){
+      myShow1(sw1)
+      sw1++;
+      if(sw1==hlen1){sw1=0;}
+    } , 4000);
+  });
+  //自动开始
+  var myTime1 = setInterval(function(){
+    myShow1(sw1)
+    sw1++;
+    if(sw1==hlen1){sw1=0;}
+  } , 4000);
+});
+
+var curIndex=0;
+//时间间隔(单位毫秒)，每秒钟显示一张，数组共有5张图片放在Photos文件夹下。
+var timeInterval=1000;
+var arr=new Array();
+arr[0]="images/U01.jpg";
+arr[1]="images/U02.jpg";
+arr[2]="images/U03.jpg";
+arr[3]="images/U04.jpg";
+setInterval(changeImg,timeInterval);
+function changeImg()
+{
+    var obj=document.getElementById("obj");
+    if (curIndex==arr.length-1) 
+    {
+        curIndex=0;
+    }
+    else
+    {
+        curIndex+=1;
+    }
+    obj.src=arr[curIndex];
+}
+	</script>
+ </head>
+
+ <body background="images/pag_bg.png">
+ <br><br>
+<div id="top" class="auto">
+    <!--导航-->
+    <div class="nav">
+	  <div class="left same"><img src="images/mainnav_l.gif"/></div>
+        <div class="mainNav">
+            <ul>
+			  <img class="logo" src="images/logo.png" style="margin-left: 15px">
+                <li><a><strong>首页</strong></a></li>
+				<li><a href="images/music.html" target="_blank"><strong>产品</strong></a></li>
+                <li><a href="images/music.html" target="_blank"><strong>服务</strong></a></li>
+				<li><a href="images/图片为网页背景01.html" target="_blank"><strong>DINGDING</strong></a></li>
+                <li><a href="images/图片为网页背景02.html" target="_blank"><strong>语言（Language）</strong></a></li>
+                <li><a href="images/图文对齐.html/" target="_blank"><strong>社区</strong></a></li>
+                <li><a href="images/music.html" target="_blank"><strong>服务</strong></a></li>
+				<li><a href="images/图片为网页背景01.html" target="_blank"><strong>DINGDING</strong></a></li>				
+            </ul>
+        </div>
+	  <div class="right same"><img src="images/mainnav_r.gif"/></div>
+	</div>
+</div>
+		<div style="position:relative; margin:auto;"align="center">
+	    <table>
+		    <tr>
+			    <td width="900" id="film">
+				<div class="focuspic" align="center">
+                 <ul>
+                 <li style="display: block;" class="showpic1"><img src="images/U001.jpg" alt="01" width="780" height="450"></li>
+                 <li class="display: block;" class="showpic1"><img src="images/U002.jpg" alt="02" width="780" height="450"></li>
+	             <li style="display: block;" class="showpic1"><img src="images/U003.jpg" alt="03" width="780" height="450"></li>
+                 <li class="showpic2 noshow"><img src="images/U004.jpg" alt="04" width="780" height="450"></li>
+                 </ul>
+                 <div class="num"></div>
+				 </div>
+			     <p>
+	            <td width="180"><div>
+	            <form>
+				 <img src="images/landing.png" style="vertical-align:top">
+                 <a href="#">登录</a>|
+                 <a href="#">注册</a>
+                 <img src="images/shoppingcart_sicon.png" style="vertical-align:top">
+                 <a class="cart" href="#">购物车0件</a>
+				</form>
+		        <br><br>
+				<img id=obj src ="images/U01.jpg" width=200 height=150 border =0>
+                <br><br>
+                <a href="images\oppo\OPPO官网.html"><strong>VIP特卖</strong></a>：<font size="" color="#ff0000">￥198</font>
+                <br><br><br><br><br><br>
+				  您可以根据以下信息筛选：<br>
+				    <form action="">价格：
+				      <select name="0-100">
+					  <option>0-100</option>
+				      <option>100-200</option>
+					  <option>200-300</option>
+					  <option>300-400</option>
+					  <option>400-500</option>
+					  <option>500-1000</option>
+				    </form>
+					<form action="">
+				      <select name="">
+				    </form>
+					
+					<form action="">排序：
+				      <select name="排序">
+					  <option>综合</option>
+					  <option>人气</option>
+					  <option>销量</option>
+					  <option>更新</option>
+				      <option>价格从低到高</option>
+					  <option>价格从高到低</option>
+				    </form>
+					
+				    <form action="">
+				      <select name="">
+				    </form>
+				    <form action="">类型：
+				      <select name="类型">
+					  <option>USB2.0</option>
+					  <option>USB3.0</option>
+					  <option>8G</option>
+					  <option>16G</option>
+				      <option>32G</option>
+					  <option>64G</option>
+					  <option>128G</option>
+				    </form>
+					<form action="">
+				      <select name="">
+				    </form>
+					<br>
+			      &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="开始搜索" href=""><br>
+				   <p>
+	            <td width="180"><div>
+	          U盘，全称USB闪存盘，英文名“USB flash disk”。[1]  它是一种使用USB接口的无需物理驱动器的微型高容量移动存储产品，通过USB接口与电脑连接，实现即插即用。[1]  U盘的称呼最早来源于朗科科技生产的一种新型存储设备，名曰“优盘”，使用USB接口进行连接。U盘连接到电脑的USB接口后，U盘的资料可与电脑交换。而之后生产的类似技术的设备由于朗科已进行专利注册，而不能再称之为“优盘”，而改称谐音的“U盘”。[1]  后来，U盘这个称呼因其简单易记而因而广为人知，是移动存储设备之一。现在市面上出现了许多支持多种端口的U盘，即三通U盘（USB电脑端口、iOS苹果接口、安卓接口）。
+		    </tr>
+		</table>
+		</div>
+	
+<br><br><br>
+
+<div id="bottom" align="center">
+    <p><img class="logo" src="images/logo.png" style="vertical-align:middle"hspace=1/><font size="5px" color="#0000ff">&trade;</font></p>
+    <p><img class="aa" src="images/WeChat.jpg" style="vertical-align:middle"hspace=3/>WeChat:<img class="bb" src="images/WeChat.png" style="vertical-align:middle"hspace=3/>
+	<img class="aa" src="images/qq.jpg" style="vertical-align:middle" hspace=3/>QQ:<img class="bb" src="images/qq.png" style="vertical-align:middle"hspace=3/></p>
+	<p>云南省昆明市罗兰大街438号  TEL:18332552633  邮编：655407 <br/>Copyright&copy; 2016 技术服务与支持：DINGDING信息技术中心 云ICP备0000000号-0</p>
+</div>
+ </body>
+</html>
